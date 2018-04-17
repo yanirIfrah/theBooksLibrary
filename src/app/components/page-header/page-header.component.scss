@@ -1,0 +1,47 @@
+.intro {
+    height: 100%;
+    width: 100%;
+    //margin: auto;
+    background: url(../../../assets/image/frontImage.jpg) no-repeat center fixed;
+    display: table;
+    margin: 0;
+    //background-size: cover; 
+}
+.intro .inner {
+    //display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    max-width: none;
+    margin-top: 40%;
+}
+.content {
+    max-width: 500%;
+    margin: 0 auto;
+    text-align: center;
+}
+.content h1 {
+    font-family: 'Relway', sans-serif;
+    color: #fff;
+    font-size: 70px;
+}
+.content h5 {
+    color: gray;
+}
+.btn {
+    border-radius: 9px;
+    font-family: 'Oswald', sans-serif;
+    color: #036Ab1;
+    font-size: 100%;
+    padding: 10px 20px;
+    border: solid  1px;
+    //text-transform: uppercase;
+    text-decoration: none;
+}
+.btn:hover {
+    //color: #fff;
+    border: solid #036Ab1 1px;
+    //line-height: 210%;
+    //text-align: justify;
+    //margin: 3%;
+    font-family: sans-serif #036Ab1;
+}

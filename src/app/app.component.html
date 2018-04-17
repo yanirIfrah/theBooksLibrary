@@ -1,0 +1,63 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black darken-4 scrolling-navbar ie-nav fixed-top" [containerInside]="true">
+    <logo>
+        <a class="logo navbar-brand" routerLink="/home">
+            <strong>The Books Library</strong>
+            <span class="sr-only">(current)</span>
+        </a>
+    </logo>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link" routerLink="/getallbooks">All Books</a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link" routerLink="/addbook">Add Book</a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link" routerLink="/updatebook">Update Book</a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link" routerLink="/deletebook">Delete Book</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+        <form class="form-inline  waves-light" mdbRippleRadius>
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        </form>
+    </links>
+</mdb-navbar>
+<router-outlet></router-outlet>
+<footer class="page-footer">
+    <hr>
+    <div class="call-to-action">
+        <ul>
+            <li>
+                <h5 style="color: grey">Register for free</h5>
+            </li>
+            <li>
+                <a href="" class="btn btn-danger waves-light" mdbRippleRadius>Sign up!</a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-copyright">
+        <div class="container-fluid">© 2018 Copyright:
+            <a href="/home"> The Book Library </a>
+        </div>
+    </div>
+</footer>

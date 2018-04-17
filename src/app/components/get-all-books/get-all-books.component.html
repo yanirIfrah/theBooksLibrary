@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get All Books</title>
+    <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
+
+<body>
+    <p id="header">{{title}}</p>
+    <h1 class="demo-title">“A room without books is like a body without a soul.”</h1>
+    <div class="container" style="overflow:left;">
+        <div class="pricing-table">
+            <div class="scroller-spacer" [ngStyle]="spacerStyle"></div>
+            <div class="pricing-option mt-3 mr-3" *ngFor="let book of allBooks">
+                <b>Title</b>
+                <h1>{{book.title | titlecase | nonEnglish}}</h1>
+                <b>Id : {{book.id}}</b>
+                <hr />
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus
+                    inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt
+                    sed illo.</p>
+                <hr />
+                <div class="price">
+                    <div class="front">
+                        <b>Author</b>
+                        <span class="price">{{book.author | titlecase | nonEnglish}}
+                            <b>{{book.date | date}}</b>
+                        </span>
+                    </div>
+                    <div class="back">
+                        <a class="button">Purchase now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

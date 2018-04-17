@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Update Book</title>
+  <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+</head>
+
+<body>
+  <p id="header">{{pageTitle}}</p>
+  <div class="jumbotron mt-5 ml-5 mr-5">
+    <h1 id="quotes">“Reading gives us someplace to go when we have to stay where we are.”</h1>
+    <p id="header">
+      <a class="header" href="/home">The Book Library</a>
+    </p>
+  </div>
+  <div class="container" style="overflow:left;">
+    <div class="pricing-table">
+      <div class="scroller-spacer" [ngStyle]="spacerStyle"></div>
+      <div class="pricing-option mt-3 mr-3" *ngFor="let book of allBooks; index as i">
+        <b>Title</b>
+        <h1>{{book.title | titlecase | nonEnglish}}</h1>
+        <b>Id : {{book.id}}</b>
+        <hr />
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore
+          quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+        <hr />
+        <div class="price">
+          <div class="front">
+            <b>Author</b>
+            <span class="price">{{book.author | titlecase | nonEnglish}}
+              <b>{{book.date | date}}</b>
+            </span>
+          </div>
+          <div class="back">
+            <a class='button' data-toggle="modal" data-target="#updateBook" (click)="openUpdateModal(book)">
+              <span class="glyphicon glyphicon-edit"></span> Edit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- updateBook Modal -->
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="modal fade" id="updateBook" aria-labelledby="updateBookLabel" aria-hidden="false">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="updateBookLabel">Update Book</h3>
+          </div>
+          <div class="container">
+            <p class="mt-2">Author Name :</p>
+            <input class="form-control" type="text" formControlName="author" name="author" [(ngModel)]="author" required/>
+            <div *ngIf="myForm.controls['author'].touched && !myForm.controls['author'].valid">
+              <span *ngIf="myForm.controls['author'].hasError('required')">
+                <p class="message">Author Name Is Requierd !</p>
+              </span>
+            </div>
+            <p>Date :</p>
+            <input class="form-control" type="date" name="date" formControlName="date" [(ngModel)]="date" required/>
+            <div *ngIf="myForm.controls['date'].touched && !myForm.controls['date'].valid">
+              <span *ngIf="myForm.controls['date'].hasError('required')">
+                <p class="message">Date Is Requierd !</p>
+              </span>
+            </div>
+            <p>Title :</p>
+            <input class="form-control" type="text" name="title" (ngModelChange)="checkIfTitleExist($event)" formControlName="title"
+              [(ngModel)]="title" required/>
+            <div *ngIf="myForm.controls['title'].touched && !myForm.controls['title'].valid">
+              <span *ngIf="myForm.controls['title'].hasError('required')">
+                <p class="message">Book Title Is Requierd !</p>
+              </span>
+            </div>
+            <span *ngIf="isAlreadyExist" class="message">
+              <P>Title already exist, Please try different title !</P>
+            </span>
+          </div>
+          <div class="modal-body">
+            <strong>Are you sure you want to Update this book ?</strong>
+            <br> Click Save to save the changes or Cancel to cancel the change !
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary btn-block" [disabled]='!myForm.valid' (click)="updateBook()">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
