@@ -19,7 +19,7 @@ import { Observable } from 'rxjs/Observable';
 export class AddBookComponent implements OnInit {
   allBooks: any = [];
   bookObj: any = {};
-  pageTitle: string;
+  pageTitle: string; 
   id: number;
   author: string = '';
   date: string = '';

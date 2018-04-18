@@ -9,9 +9,9 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "data",
+        "db",
         "favicon.ico",
-        { "glob": "data.json", "input": "./", "output": "./assets/" }
+        { "glob": "db.json", "input": "./", "output": "./assets/" }
       ],
       "index": "index.html",
       "main": "main.ts",

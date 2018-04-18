@@ -32,13 +32,13 @@
           </div>
           <div class="container">
             <p>Please Fill In The Details Of The New Book :</p>
-            <p>Book ID :</p>
+            <!--<p>Book ID :</p>
             <input type="number" formControlName="id" name="id" [(ngModel)]="id" required/>
             <div *ngIf="myForm.controls['id'].touched && !myForm.controls['id'].valid">
               <span *ngIf="myForm.controls['id'].hasError('required')">
                 <p class="message">Id Is Requierd !</p>
               </span>
-            </div>
+            </div>-->
             <p>Author Name :</p>
             <input type="text" formControlName="author" name="author" [(ngModel)]="author" required/>
             <div *ngIf="myForm.controls['author'].touched && !myForm.controls['author'].valid">
