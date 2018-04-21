@@ -35,7 +35,6 @@
     "typescript": "~2.5.3"
   },
   "devDependencies": {
-
     "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
@@ -52,9 +51,9 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
   },
-  "engines":{
-    "node":"8.9.4",
-    "npm":"5.6.0"
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
   }
 }
 
