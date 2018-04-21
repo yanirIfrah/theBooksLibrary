@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall":"ng build --aot --target=production"
-    "json:server": "json-server --watch data.json"
+    "json:server": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
