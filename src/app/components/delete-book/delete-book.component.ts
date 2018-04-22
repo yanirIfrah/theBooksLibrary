@@ -46,7 +46,7 @@ export class DeleteBookComponent implements OnInit {
     this.httpService.deleteBook(this.bookObj).subscribe(
       date => { this.bookObj = date },
       err => { console.log(err) })
-    location.reload();
+    this.getAllBooks();
   }
 
   onSubmit() {
