@@ -83,6 +83,7 @@ export class UpdateBookComponent implements OnInit {
         res => { this.bookObj = res },
         err => { console.log(err) })
       this.onSubmit();
+      this.getAllBooks();
     }
     else {
       this.errorMessage = 'Title Is Already Exist, Please Try New Title !';
