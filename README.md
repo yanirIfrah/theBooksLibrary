@@ -1,4 +1,5 @@
 # TheBooksLibrary
+This project is based on json file as the backend data abd use json-server.  Json server needs to run before 'ng serve' by typing json-server --watch db.json in the cmd.  Json server is watching for changes in the db.json file.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
 
