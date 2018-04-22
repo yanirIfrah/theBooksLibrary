@@ -79,7 +79,7 @@ export class AddBookComponent implements OnInit {
         data => { this.bookObj = data },
         err => { console.log(err) })
       this.onSubmit();
-      //location.reload();
+      this.getAllBooks();
     }
     else {
       this.errorMessage = 'Title Is Already Exist, Please Try New Title !';
